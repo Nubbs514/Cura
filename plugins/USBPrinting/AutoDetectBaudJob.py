@@ -30,11 +30,11 @@ class AutoDetectBaudJob(Job):
 
         programmer = Stk500v2()
         serial = None
-        try:
-            programmer.connect(self._serial_port)
-            serial = programmer.leaveISP()
-        except ispBase.IspError:
-            programmer.close()
+       # try:
+           # programmer.connect(self._serial_port)
+           # serial = programmer.leaveISP()
+       # except ispBase.IspError:
+           # programmer.close()
 
         for retry in range(tries):
             for baud_rate in self._all_baud_rates:
